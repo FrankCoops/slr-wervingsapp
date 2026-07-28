@@ -534,7 +534,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;heigh
 <div style="flex:none;background:#000;border-top:1px solid rgba(255,255,255,.12);display:flex;padding-bottom:26px">
 <div onClick="{{ goHome }}" style="flex:1;padding:14px 4px 12px;display:flex;flex-direction:column;align-items:center;gap:7px;cursor:pointer">
 <div style="{{ tabHomeMark }}"></div>
-<div style="{{ tabHomeText }}">Index</div>
+<div style="{{ tabHomeText }}">SLR</div>
 </div>
 <div onClick="{{ goOnderwijs }}" style="flex:1;padding:14px 4px 12px;display:flex;flex-direction:column;align-items:center;gap:7px;cursor:pointer">
 <div style="{{ tabOndMark }}"></div>
@@ -716,7 +716,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;heigh
 <div style="position:absolute;inset:0;z-index:40;background:#575757;display:flex;flex-direction:column;animation:slrSlide .24s cubic-bezier(.2,.7,.2,1)">
 <div style="flex:1;overflow:auto">
 <div style="position:relative;height:330px">
-<div style="position:absolute;inset:0;background-image:url('uploads/20230718-c01.jpg');background-size:cover;background-position:50% 52%;filter:grayscale(100%) contrast(1.06)"></div>
+<div style="position:absolute;inset:0;background-image:url('uploads/kop-van-zuid.jpg');background-size:cover;background-position:50% 50%;filter:grayscale(100%) contrast(1.06)"></div>
 <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.6) 0%,rgba(60,60,60,.35) 48%,#575757 100%)"></div>
 <div onClick="{{ closeChapter }}" style="position:absolute;top:60px;left:18px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:#000;font-weight:700;font-size:15px;cursor:pointer">←</div>
 <div style="position:absolute;top:60px;right:18px;font-weight:700;font-size:30px;line-height:1;color:#ffe500">03</div>
@@ -848,7 +848,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;heigh
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:&quot;100%&quot;,&quot;height&quot;:1120},&quot;startScherm&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;cover&quot;,&quot;home&quot;,&quot;onderwijs&quot;,&quot;projecten&quot;,&quot;aanmelden&quot;],&quot;default&quot;:&quot;cover&quot;,&quot;tsType&quot;:&quot;'cover' | 'home' | 'onderwijs' | 'projecten' | 'aanmelden'&quot;,&quot;section&quot;:&quot;Gedrag&quot;},&quot;toonVoortgang&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Gedrag&quot;},&quot;toonVraagKiezer&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Projecten&quot;},&quot;openDagDatum&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Datum volgt&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Aanmelden&quot;}}">
 const PROJECTS = [
-  { id: 'binnenrotte', nr: '00', name: 'De Binnenrotte', periode: 'Introductieweken', meta: 'Waar Rotterdam is gesticht',
+  { id: 'binnenrotte', nr: '00', name: 'De Binnenrotte', periode: 'Introductie', meta: 'Waar Rotterdam is gesticht',
     photo: 'uploads/Pagina_Binnenrotte.png', focus: '50% 50%',
     teaser: 'De plek waar Rotterdam eeuwen geleden is gesticht. Je eerste mini-project.',
     body: 'Tijdens de eerste weken van het schooljaar maak je kennis met je klasgenootjes, de docenten en het nieuwe onderwijs. Tijdens de eerste lessen hoor je wat je dat jaar allemaal gaat leren en waarom de verschillende vakken eigenlijk belangrijk zijn. Tegelijkertijd voer je het eerste mini-project uit, rondom de Binnenrotte.',
@@ -983,7 +983,7 @@ const SPOTS = [
   { id: 'stadionpark', label: 'Stadionpark',    x: 296, y: 200, w: 98,  h: 58 }
 ];
 
-const LABELS = { home: 'Index', onderwijs: '04 · Ons onderwijs', projecten: '05 · Projecten', aanmelden: '06 · Aanmelden' };
+const LABELS = { home: 'SLR', onderwijs: '04 · Ons onderwijs', projecten: '05 · Projecten', aanmelden: '06 · Aanmelden' };
 
 class Component extends DCLogic {
   state = {
