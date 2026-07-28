@@ -124,7 +124,6 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;heigh
 </div>
 
 <div onClick="{{ goAanmelden }}" style="position:relative;background:#8c8c8c;color:#fff;padding:16px 18px 16px;min-height:150px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;cursor:pointer;overflow:hidden">
-<div style="position:absolute;top:0;right:0;bottom:0;width:6px;background:#ffe500"></div>
 <div style="font-weight:700;font-size:22px;line-height:.8">06</div>
 <div>
 <div style="font-weight:700;text-transform:uppercase;font-size:30px;line-height:.85;letter-spacing:-.01em">Aan<span style="color:#ffe500">melden</span></div>
@@ -244,7 +243,13 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;heigh
 </div>
 </div>
 
-<div onClick="{{ goProjecten }}" style="margin:26px 18px 0;display:flex;align-items:center;justify-content:space-between;background:#ffe500;color:#000;font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:.06em;padding:17px 18px;cursor:pointer" style-active="transform:translateY(2px)"><span>Naar de projecten</span><span>→</span></div>
+<div onClick="{{ goProjecten }}" style="position:relative;margin:26px 18px 0;background:#ffe500;color:#000;min-height:112px;padding:16px 18px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;cursor:pointer" style-active="transform:translateY(2px)">
+<div style="font-weight:700;text-transform:uppercase;font-size:10px;letter-spacing:.14em">Volgende</div>
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px">
+<div style="font-weight:700;text-transform:uppercase;font-size:26px;line-height:.85;letter-spacing:-.01em">Naar de<br>projecten</div>
+<div style="font-weight:700;font-size:44px;line-height:.58;flex:none">→</div>
+</div>
+</div>
 <div style="height:30px"></div>
 </div>
 </sc-if>
@@ -360,17 +365,26 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;heigh
 <div style="padding:26px 18px 0">
 <div style="font-weight:700;text-transform:uppercase;font-size:10px;letter-spacing:.14em;color:#b2b2b2;margin-bottom:12px">Zo blijf je op de hoogte</div>
 <div style="display:flex;flex-direction:column;gap:2px">
-<div style="background:#3c3c3c;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
-<div style="font-weight:700;text-transform:uppercase;font-size:14px;letter-spacing:.02em">Onze socials</div>
-<div style="font-weight:400;font-size:12px;color:#b2b2b2">Houd ze in de gaten</div>
+<div style="position:relative;background:#8c8c8c;color:#fff;min-height:104px;padding:15px 18px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;cursor:pointer">
+<div style="font-weight:700;text-transform:uppercase;font-size:22px;line-height:.9">Onze <span style="color:#ffe500">socials</span></div>
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px">
+<div style="font-weight:400;font-size:12px;color:#f2f2f2">Houd ze in de gaten</div>
+<div style="font-weight:700;font-size:38px;line-height:.6;flex:none">→</div>
 </div>
-<div style="background:#3c3c3c;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
-<div style="font-weight:700;text-transform:uppercase;font-size:14px;letter-spacing:.02em">Onze website</div>
-<div style="font-weight:400;font-size:12px;color:#b2b2b2">Kijk eens rond</div>
 </div>
-<div style="background:#ffe500;color:#000;padding:16px 18px;display:flex;align-items:center;justify-content:space-between;gap:12px">
-<div style="font-weight:700;text-transform:uppercase;font-size:14px;letter-spacing:.02em">Onze open dagen</div>
-<div style="font-weight:700;text-transform:uppercase;font-size:11px;letter-spacing:.06em">{{ openDag }}</div>
+<div style="position:relative;background:#8c8c8c;color:#fff;min-height:104px;padding:15px 18px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;cursor:pointer">
+<div style="font-weight:700;text-transform:uppercase;font-size:22px;line-height:.9">Onze <span style="color:#ffe500">website</span></div>
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px">
+<div style="font-weight:400;font-size:12px;color:#f2f2f2">Kijk eens rond</div>
+<div style="font-weight:700;font-size:38px;line-height:.6;flex:none">→</div>
+</div>
+</div>
+<div style="position:relative;background:#ffe500;color:#000;min-height:104px;padding:15px 18px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;cursor:pointer">
+<div style="font-weight:700;text-transform:uppercase;font-size:22px;line-height:.9">Onze open dagen</div>
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px">
+<div style="font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:.06em">{{ openDag }}</div>
+<div style="font-weight:700;font-size:38px;line-height:.6;flex:none">→</div>
+</div>
 </div>
 </div>
 <p style="font-weight:300;font-size:13px;line-height:1.45;color:#c9c9c9;margin:14px 0 0">Kom naar onze open dagen, want we willen je dolgraag ontmoeten.</p>
@@ -557,7 +571,13 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;heigh
 <p style="font-weight:400;font-size:13px;line-height:1.45;margin:12px 0 0">Zorg dus dat je onze socials in de gaten houdt, kijk eens op onze website en kom naar onze open dagen, want we willen je dolgraag ontmoeten.</p>
 </div>
 </div>
-<div onClick="{{ openGebouw }}" style="margin:24px 18px 0;display:flex;align-items:center;justify-content:space-between;background:#000;color:#fff;font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:.06em;padding:17px 18px;cursor:pointer" style-active="transform:translateY(2px)"><span>02 · Vet gebouw</span><span style="color:#ffe500">→</span></div>
+<div onClick="{{ openGebouw }}" style="position:relative;margin:24px 18px 0;background:#8c8c8c;color:#fff;min-height:112px;padding:16px 18px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;cursor:pointer" style-active="transform:translateY(2px)">
+<div style="font-weight:700;text-transform:uppercase;font-size:10px;letter-spacing:.14em;color:#ffe500">Hoofdstuk 02</div>
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px">
+<div style="font-weight:700;text-transform:uppercase;font-size:26px;line-height:.85;letter-spacing:-.01em">Vet<br>gebouw</div>
+<div style="font-weight:700;font-size:44px;line-height:.58;flex:none">→</div>
+</div>
+</div>
 <div style="height:34px"></div>
 </div>
 </div>
@@ -610,7 +630,13 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;heigh
 <div style="font-weight:700;text-transform:uppercase;font-size:26px;line-height:.88">Kortom: alles wat<br>jij je als leerling<br>kan wensen.</div>
 </div>
 </div>
-<div onClick="{{ openZuid }}" style="margin:24px 18px 0;display:flex;align-items:center;justify-content:space-between;background:#000;color:#fff;font-weight:700;text-transform:uppercase;font-size:12px;letter-spacing:.06em;padding:17px 18px;cursor:pointer" style-active="transform:translateY(2px)"><span>03 · De Kop van Zuid</span><span style="color:#ffe500">→</span></div>
+<div onClick="{{ openZuid }}" style="position:relative;margin:24px 18px 0;background:#8c8c8c;color:#fff;min-height:112px;padding:16px 18px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;cursor:pointer" style-active="transform:translateY(2px)">
+<div style="font-weight:700;text-transform:uppercase;font-size:10px;letter-spacing:.14em;color:#ffe500">Hoofdstuk 03</div>
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:12px">
+<div style="font-weight:700;text-transform:uppercase;font-size:26px;line-height:.85;letter-spacing:-.01em">De Kop<br>van Zuid</div>
+<div style="font-weight:700;font-size:44px;line-height:.58;flex:none">→</div>
+</div>
+</div>
 <div style="height:34px"></div>
 </div>
 </div>
