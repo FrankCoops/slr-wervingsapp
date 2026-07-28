@@ -32,14 +32,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;heigh
 </style>
 <script src="./image-slot.js"></script>
 </helmet>
-<div style="min-height:100vh;background:#575757;display:flex;flex-direction:column;align-items:center;gap:22px;padding:34px 16px 56px;box-sizing:border-box">
-
-<div style="display:flex;flex-direction:column;gap:7px;align-items:center">
-<div style="font-weight:700;text-transform:uppercase;font-size:11px;letter-spacing:.14em;color:#b2b2b2">Wervingsapp · schooljaar 27-28</div>
-<div style="font-weight:700;text-transform:uppercase;font-size:26px;line-height:.86;letter-spacing:-.01em;color:#fff;text-align:center">De nieuwste school <span style="color:#ffe500">van de stad</span></div>
-</div>
-
-<x-import component-from-global-scope="IOSDevice" from="./ios-frame.jsx" dark="{{ true }}" hint-size="402px,874px">
+<div style="min-height:100dvh;background:#000;display:flex;justify-content:center">
+<div style="width:100%;max-width:440px;height:100dvh;position:relative;overflow:hidden;background:#575757;box-shadow:0 0 60px rgba(0,0,0,.5)">
 <div style="position:relative;height:100%;background:#575757;display:flex;flex-direction:column;overflow:hidden;font-family:'Gilroy',system-ui,sans-serif;color:#fff">
 
 <sc-if value="{{ isApp }}" hint-placeholder-val="{{ false }}">
@@ -842,9 +836,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;heigh
 </sc-if>
 
 </div>
-</x-import>
-
-<div style="max-width:402px;font-weight:300;font-size:12px;line-height:1.5;color:#b2b2b2;text-align:center">Prototype · alle teksten komen uit het brondocument "Stedelijk Lyceum Rotterdam" of zijn daarvan afgeleid. Beeld: renders van het nieuwe schoolgebouw en foto's van de projectlocaties, plus interim zwart-wit stock uit het design system.</div>
+</div>
 </div>
 
 </x-dc>
