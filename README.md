@@ -47,23 +47,24 @@ heeft een limiet van ~196 KB per bestand). Alle beelden zijn nu ingevuld — er
 staan geen grijze placeholders meer — maar een deel is nog een tijdelijke
 stand-in.
 
-**Echte foto's** (projectlocaties, aangeleverd via `Afbeeldingen/`):
+**Echte foto's** (aangeleverd via `Afbeeldingen/`, app toont ze in zwart-wit):
 
-- `uploads/DeMaas.jpg` · `Oranjeboomstraat.jpg` · `Pagina_Binnenrotte.png` ·
-  `Stadionpark.jpg` · `Wilhelminapier.jpg`
+- Projectlocaties: `uploads/DeMaas.jpg` · `Oranjeboomstraat.jpg` ·
+  `Pagina_Binnenrotte.png` · `Stadionpark.jpg` · `Wilhelminapier.jpg`
+- Gebouw-render buitenkant → `assets/photos/cover-gebouw.jpg` (cover / beginpagina)
+- Gebouw-render dakplein → `uploads/20230718-c02.jpg` + `uploads/20230718-c07.jpg`
+  (Hoofdstuk 2 "Vet gebouw": chapter-hero én home-tegel)
 
 **Stand-in: zwart-wit stock** uit de beeldbank (`Afbeeldingen/Beeldbank/…`):
 
 | Slot | Stockbron |
 |------|-----------|
-| `assets/photos/cover.jpg` | ethan-de-long |
+| `assets/photos/cover.jpg` | ethan-de-long (nu alleen index-hero "Waarom je voor ons kiest") |
 | `assets/photos/groep.jpg` | joel-muniz (groepsfoto) |
 | `assets/photos/stadsjongen.jpg` | king-nkosy |
 | `assets/photos/leerling-1.jpg` | jakob-rosen |
 | `assets/photos/avond.jpg` | jc-laurio |
 | `assets/photos/brug.jpg` | santiago-antunez |
-| `uploads/20230718-c02.jpg` | adam-winger |
-| `uploads/20230718-c07.jpg` | mehrab-zahedbeigi |
 | `uploads/20230718-c01.jpg` | cottonbro-studio |
 | `uploads/20230718-c08.jpg` | frank-k |
 | `uploads/pasted-1785187167939-0.png` | ralph-rabago |
