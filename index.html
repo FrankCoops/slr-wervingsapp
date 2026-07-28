@@ -345,17 +345,15 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;heigh
 <div style="font-weight:700;text-transform:uppercase;font-size:10px;letter-spacing:.14em;color:#ffe500">Onze stad, onze projecten</div>
 <div style="font-weight:700;text-transform:uppercase;font-size:9px;letter-spacing:.12em;color:rgba(255,255,255,.6)">Beweeg of tik</div>
 </div>
-<div style="position:relative;height:268px;overflow:hidden;-webkit-user-select:none;user-select:none">
-<div style="position:absolute;inset:0;background-image:url('assets/photos/skyline-lucht.png');background-size:402px 268px;background-position:0 0;filter:grayscale(100%) contrast(1.12) brightness(.9)"></div>
-<div style="{{ bandT }}"></div>
-<div style="{{ bandB }}"></div>
-<div style="{{ bandL }}"></div>
-<div style="{{ bandR }}"></div>
-<div style="{{ lit }}"></div>
-<sc-for list="{{ plateSpots }}" as="sp" hint-placeholder-count="5">
-<div onMouseEnter="{{ sp.enter }}" onClick="{{ sp.tap }}" style="{{ sp.box }}">
-<div style="{{ sp.frame }}"></div>
-<div style="{{ sp.tag }}"><span style="{{ sp.tagNr }}">{{ sp.nr }}</span>{{ sp.label }}</div>
+<div style="position:relative;height:376px;overflow:hidden;-webkit-user-select:none;user-select:none">
+<div style="position:absolute;inset:0;background:#000;background-image:url('assets/photos/rotterdam-map.jpg');background-size:cover;background-position:center;filter:contrast(1.06) brightness(.95)"></div>
+<sc-for list="{{ mapLines }}" as="ml" hint-placeholder-count="4">
+<div style="{{ ml.style }}"></div>
+</sc-for>
+<sc-for list="{{ mapSpots }}" as="mp" hint-placeholder-count="5">
+<div onMouseEnter="{{ mp.enter }}" onClick="{{ mp.tap }}" style="{{ mp.wrap }}">
+<div style="{{ mp.dot }}">{{ mp.nr }}</div>
+<div style="{{ mp.tag }}">{{ mp.label }}</div>
 </div>
 </sc-for>
 </div>
@@ -1265,6 +1263,53 @@ class Component extends DCLogic {
         else this.setState({ errors: null, step: 'done' });
       }
     };
+
+    // --- Rotterdam-kaart plaat: gele markers + verbindingslijnen ---
+    const PW = 402, PH = 376;
+    const MSPOTS = [
+      { id: 'binnenrotte', label: 'Binnenrotte',    x: 0.44, y: 0.33 },
+      { id: 'maas',        label: 'De Maas',        x: 0.53, y: 0.47 },
+      { id: 'pier',        label: 'Wilhelminapier', x: 0.50, y: 0.56 },
+      { id: 'oranjeboom',  label: 'Oranjeboom',     x: 0.60, y: 0.57 },
+      { id: 'stadionpark', label: 'Stadionpark',    x: 0.66, y: 0.72 }
+    ];
+    const mpx = (s) => ({ x: s.x * PW, y: s.y * PH });
+    vals.mapLines = MSPOTS.slice(0, -1).map((s, i) => {
+      const a = mpx(s), b = mpx(MSPOTS[i + 1]);
+      const dx = b.x - a.x, dy = b.y - a.y, len = Math.sqrt(dx * dx + dy * dy);
+      const ang = Math.atan2(dy, dx) * 180 / Math.PI;
+      return { style: {
+        position: 'absolute', left: a.x + 'px', top: a.y + 'px',
+        width: len + 'px', height: 2, background: 'rgba(255,229,0,.5)',
+        transformOrigin: '0 50%', transform: 'rotate(' + ang + 'deg)',
+        boxShadow: '0 0 6px rgba(255,229,0,.45)', pointerEvents: 'none', zIndex: 2
+      } };
+    });
+    vals.mapSpots = MSPOTS.map((s) => {
+      const p = PROJECTS.find(q => q.id === s.id);
+      const on = st.hot === s.id;
+      const pt = mpx(s);
+      return {
+        nr: p.nr, label: s.label,
+        wrap: { position: 'absolute', left: pt.x + 'px', top: pt.y + 'px', transform: 'translate(-50%,-50%)', cursor: 'pointer', zIndex: on ? 6 : 4 },
+        dot: {
+          width: on ? 34 : 24, height: on ? 34 : 24, borderRadius: '50%',
+          background: '#ffe500', color: '#000',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          fontWeight: 700, fontSize: on ? 14 : 11, lineHeight: 1, boxSizing: 'border-box',
+          boxShadow: on ? '0 0 0 4px rgba(255,229,0,.25), 0 0 18px rgba(255,229,0,.95)' : '0 0 8px rgba(255,229,0,.6)',
+          transition: 'width .2s ease, height .2s ease, box-shadow .2s ease, font-size .2s ease'
+        },
+        tag: {
+          display: on ? 'block' : 'none', position: 'absolute', left: '50%', top: -26,
+          transform: 'translateX(-50%)', whiteSpace: 'nowrap',
+          background: '#ffe500', color: '#000', fontWeight: 700, textTransform: 'uppercase',
+          fontSize: 9, letterSpacing: '.08em', padding: '3px 7px'
+        },
+        enter: () => this.setState({ hot: s.id }),
+        tap: () => this.openProject(s.id)
+      };
+    });
 
     const mkTile = (id, open) => ({
       inner: st.flipped === id ? { transform: 'rotateY(180deg)' } : {},
