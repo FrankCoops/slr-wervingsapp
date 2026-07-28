@@ -45,23 +45,28 @@ De code, fonts en volledige app-logica zijn 1-op-1 uit het ontwerp overgenomen.
 De **foto's konden niet automatisch worden opgehaald** (de lees-tool heeft een
 limiet van ~196 KB per bestand; de originele foto's zijn groter).
 
-**Al ingevuld met de echte foto** (aangeleverd via de map `Afbeeldingen/`):
+**Echte projectlocatie-foto's** (aangeleverd via `Afbeeldingen/`):
 
-- `uploads/DeMaas.jpg`
-- `uploads/Oranjeboomstraat.jpg`
-- `uploads/Pagina_Binnenrotte.png`
-- `uploads/Stadionpark.jpg`
-- `uploads/Wilhelminapier.jpg`
+- `uploads/DeMaas.jpg` · `Oranjeboomstraat.jpg` · `Pagina_Binnenrotte.png` ·
+  `Stadionpark.jpg` · `Wilhelminapier.jpg`
 
-**Nog grijze placeholder — hier moeten de echte foto's nog in** (12):
+**Personen-slots gevuld met zwart-wit stock** uit de beeldbank van het design
+system (`Afbeeldingen/Beeldbank/…`), als tijdelijke stand-in:
 
-- `assets/photos/cover.jpg` · `groep.jpg` · `stadsjongen.jpg` · `avond.jpg` ·
-  `brug.jpg` · `leerling-1.jpg` · `skyline-lucht.png`
+- `assets/photos/cover.jpg`  ← ethan-de-long
+- `assets/photos/groep.jpg`  ← joel-muniz (groepsfoto)
+- `assets/photos/stadsjongen.jpg`  ← king-nkosy
+- `assets/photos/leerling-1.jpg`  ← jakob-rosen
+
+**Nog grijze placeholder — hier moeten nog echte school-/stadsbeelden in** (8):
+
+- `assets/photos/avond.jpg` · `brug.jpg` · `skyline-lucht.png`
 - `uploads/20230718-c01.jpg` · `20230718-c02.jpg` · `20230718-c07.jpg` ·
   `20230718-c08.jpg` · `pasted-1785187167939-0.png`
 
-Vervangen gaat het makkelijkst zo: zet de echte bestanden in de map
-`Afbeeldingen/` (of kopieer ze direct naar het juiste pad hierboven). De
+Deze zijn stad/gebouw (schoolgebouw-renders, skyline, brug, avondbeeld) en zijn
+niet met stockportretten te vullen. Vervangen: zet de echte bestanden met exact
+deze namen in `Afbeeldingen/` (of kopieer ze direct naar het pad hierboven). De
 afmetingen mogen afwijken; alleen `assets/photos/skyline-lucht.png` wordt op een
 vaste maat (402×268) gebruikt voor de interactieve kaart, dus houd die verhouding
 aan.
