@@ -39,37 +39,43 @@ Alle app-logica en teksten staan in `index.html`, in het
 `<script type="text/x-dc" data-dc-script>`-blok onderaan het bestand. Daar pas je
 de projecten, stappen, redenen en overige inhoud aan.
 
-## Foto's — deels echt, deels nog placeholder
+## Foto's — alle slots gevuld (deels interim stand-in)
 
 De code, fonts en volledige app-logica zijn 1-op-1 uit het ontwerp overgenomen.
-De **foto's konden niet automatisch worden opgehaald** (de lees-tool heeft een
-limiet van ~196 KB per bestand; de originele foto's zijn groter).
+De **originele foto's konden niet automatisch worden opgehaald** (de lees-tool
+heeft een limiet van ~196 KB per bestand). Alle beelden zijn nu ingevuld — er
+staan geen grijze placeholders meer — maar een deel is nog een tijdelijke
+stand-in.
 
-**Echte projectlocatie-foto's** (aangeleverd via `Afbeeldingen/`):
+**Echte foto's** (projectlocaties, aangeleverd via `Afbeeldingen/`):
 
 - `uploads/DeMaas.jpg` · `Oranjeboomstraat.jpg` · `Pagina_Binnenrotte.png` ·
   `Stadionpark.jpg` · `Wilhelminapier.jpg`
 
-**Personen-slots gevuld met zwart-wit stock** uit de beeldbank van het design
-system (`Afbeeldingen/Beeldbank/…`), als tijdelijke stand-in:
+**Stand-in: zwart-wit stock** uit de beeldbank (`Afbeeldingen/Beeldbank/…`):
 
-- `assets/photos/cover.jpg`  ← ethan-de-long
-- `assets/photos/groep.jpg`  ← joel-muniz (groepsfoto)
-- `assets/photos/stadsjongen.jpg`  ← king-nkosy
-- `assets/photos/leerling-1.jpg`  ← jakob-rosen
+| Slot | Stockbron |
+|------|-----------|
+| `assets/photos/cover.jpg` | ethan-de-long |
+| `assets/photos/groep.jpg` | joel-muniz (groepsfoto) |
+| `assets/photos/stadsjongen.jpg` | king-nkosy |
+| `assets/photos/leerling-1.jpg` | jakob-rosen |
+| `assets/photos/avond.jpg` | jc-laurio |
+| `assets/photos/brug.jpg` | santiago-antunez |
+| `uploads/20230718-c02.jpg` | adam-winger |
+| `uploads/20230718-c07.jpg` | mehrab-zahedbeigi |
+| `uploads/20230718-c01.jpg` | cottonbro-studio |
+| `uploads/20230718-c08.jpg` | frank-k |
+| `uploads/pasted-1785187167939-0.png` | ralph-rabago |
 
-**Nog grijze placeholder — hier moeten nog echte school-/stadsbeelden in** (8):
+**Stand-in: gegenereerd** — `assets/photos/skyline-lucht.png` (402×268) is een
+gestileerd skyline-silhouet, gemaakt voor de interactieve kaart (de beeldbank had
+geen skyline). De klikvlakken/hotspots liggen hierop.
 
-- `assets/photos/avond.jpg` · `brug.jpg` · `skyline-lucht.png`
-- `uploads/20230718-c01.jpg` · `20230718-c02.jpg` · `20230718-c07.jpg` ·
-  `20230718-c08.jpg` · `pasted-1785187167939-0.png`
-
-Deze zijn stad/gebouw (schoolgebouw-renders, skyline, brug, avondbeeld) en zijn
-niet met stockportretten te vullen. Vervangen: zet de echte bestanden met exact
-deze namen in `Afbeeldingen/` (of kopieer ze direct naar het pad hierboven). De
-afmetingen mogen afwijken; alleen `assets/photos/skyline-lucht.png` wordt op een
-vaste maat (402×268) gebruikt voor de interactieve kaart, dus houd die verhouding
-aan.
+De echte school-/stadsbeelden (schoolgebouw, skyline, brug, avond) kun je later
+zelf plaatsen: zet de bestanden met **exact dezelfde naam** in `Afbeeldingen/` of
+kopieer ze direct naar het pad hierboven. Afmetingen mogen afwijken; houd voor
+`skyline-lucht.png` de verhouding 402×268 aan (interactieve kaart).
 
 ## Naar GitHub pushen
 
