@@ -1,6 +1,9 @@
 # macOS
 .DS_Store
 
+# Aanlever-/dropmap voor bronfoto's (worden naar assets/ en uploads/ gekopieerd)
+Afbeeldingen/
+
 # Editor / OS cruft
 *.log
 Thumbs.db

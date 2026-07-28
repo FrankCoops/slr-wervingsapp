@@ -39,20 +39,32 @@ Alle app-logica en teksten staan in `index.html`, in het
 `<script type="text/x-dc" data-dc-script>`-blok onderaan het bestand. Daar pas je
 de projecten, stappen, redenen en overige inhoud aan.
 
-## ⚠️ Foto's zijn tijdelijke placeholders
+## Foto's — deels echt, deels nog placeholder
 
 De code, fonts en volledige app-logica zijn 1-op-1 uit het ontwerp overgenomen.
 De **foto's konden niet automatisch worden opgehaald** (de lees-tool heeft een
-limiet van ~196 KB per bestand; de originele foto's zijn groter). Alle beelden in
-`assets/photos/` en `uploads/` zijn daarom nu **grijze placeholders** met de
-bestandsnaam erin.
+limiet van ~196 KB per bestand; de originele foto's zijn groter).
 
-De app werkt en oogt verder compleet; alleen de foto's moeten nog vervangen
-worden. Zet de echte foto's op exact dezelfde paden en bestandsnamen, bijvoorbeeld
-door de map uit Claude Design te downloaden en de bestanden in `assets/photos/` en
-`uploads/` te kopiëren. De afmetingen mogen afwijken; alleen
-`assets/photos/skyline-lucht.png` wordt op een vaste maat (402×268) gebruikt voor
-de interactieve kaart, dus houd die verhouding aan.
+**Al ingevuld met de echte foto** (aangeleverd via de map `Afbeeldingen/`):
+
+- `uploads/DeMaas.jpg`
+- `uploads/Oranjeboomstraat.jpg`
+- `uploads/Pagina_Binnenrotte.png`
+- `uploads/Stadionpark.jpg`
+- `uploads/Wilhelminapier.jpg`
+
+**Nog grijze placeholder — hier moeten de echte foto's nog in** (12):
+
+- `assets/photos/cover.jpg` · `groep.jpg` · `stadsjongen.jpg` · `avond.jpg` ·
+  `brug.jpg` · `leerling-1.jpg` · `skyline-lucht.png`
+- `uploads/20230718-c01.jpg` · `20230718-c02.jpg` · `20230718-c07.jpg` ·
+  `20230718-c08.jpg` · `pasted-1785187167939-0.png`
+
+Vervangen gaat het makkelijkst zo: zet de echte bestanden in de map
+`Afbeeldingen/` (of kopieer ze direct naar het juiste pad hierboven). De
+afmetingen mogen afwijken; alleen `assets/photos/skyline-lucht.png` wordt op een
+vaste maat (402×268) gebruikt voor de interactieve kaart, dus houd die verhouding
+aan.
 
 ## Naar GitHub pushen
 
