@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Editor / OS cruft
+*.log
+Thumbs.db
+
+# Claude Code local settings (verwijder deze regel als je ze wél wilt delen)
+.claude/settings.local.json
