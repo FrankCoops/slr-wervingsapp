@@ -356,6 +356,10 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:26px;heigh
 <div style="{{ mp.tag }}">{{ mp.label }}</div>
 </div>
 </sc-for>
+<div style="{{ schoolPin.wrap }}">
+<div style="{{ schoolPin.label }}">SLR</div>
+<div style="{{ schoolPin.pin }}"><div style="{{ schoolPin.dot }}"></div></div>
+</div>
 </div>
 <div onClick="{{ capOpen }}" style="background:#000;padding:14px 18px 16px;display:flex;align-items:flex-end;justify-content:space-between;gap:14px;cursor:pointer">
 <div style="min-width:0">
@@ -1267,22 +1271,26 @@ class Component extends DCLogic {
     // --- Rotterdam-kaart plaat: gele markers + verbindingslijnen ---
     const PW = 402, PH = 376;
     const MSPOTS = [
-      { id: 'binnenrotte', label: 'Binnenrotte',    x: 0.44, y: 0.33 },
-      { id: 'maas',        label: 'De Maas',        x: 0.53, y: 0.47 },
-      { id: 'pier',        label: 'Wilhelminapier', x: 0.50, y: 0.56 },
-      { id: 'oranjeboom',  label: 'Oranjeboom',     x: 0.60, y: 0.57 },
-      { id: 'stadionpark', label: 'Stadionpark',    x: 0.66, y: 0.72 }
+      { id: 'binnenrotte', label: 'Binnenrotte',    x: 0.43, y: 0.31 },
+      { id: 'maas',        label: 'De Maas',        x: 0.46, y: 0.45 },
+      { id: 'pier',        label: 'Wilhelminapier', x: 0.42, y: 0.57 },
+      { id: 'oranjeboom',  label: 'Oranjeboom',     x: 0.66, y: 0.55 },
+      { id: 'stadionpark', label: 'Stadionpark',    x: 0.66, y: 0.74 }
     ];
     const mpx = (s) => ({ x: s.x * PW, y: s.y * PH });
-    vals.mapLines = MSPOTS.slice(0, -1).map((s, i) => {
-      const a = mpx(s), b = mpx(MSPOTS[i + 1]);
-      const dx = b.x - a.x, dy = b.y - a.y, len = Math.sqrt(dx * dx + dy * dy);
+    // School-locatie (Zuiderspoorstraat 6, Kop van Zuid) — centraal ankerpunt
+    const SCHOOL = { x: 0.55, y: 0.60 };
+    const sp0 = mpx(SCHOOL);
+    // gele stralen van de school naar elk project
+    vals.mapLines = MSPOTS.map((s) => {
+      const b = mpx(s);
+      const dx = b.x - sp0.x, dy = b.y - sp0.y, len = Math.sqrt(dx * dx + dy * dy);
       const ang = Math.atan2(dy, dx) * 180 / Math.PI;
       return { style: {
-        position: 'absolute', left: a.x + 'px', top: a.y + 'px',
-        width: len + 'px', height: 2, background: 'rgba(255,229,0,.5)',
+        position: 'absolute', left: sp0.x + 'px', top: sp0.y + 'px',
+        width: len + 'px', height: 2, background: 'rgba(255,229,0,.42)',
         transformOrigin: '0 50%', transform: 'rotate(' + ang + 'deg)',
-        boxShadow: '0 0 6px rgba(255,229,0,.45)', pointerEvents: 'none', zIndex: 2
+        boxShadow: '0 0 5px rgba(255,229,0,.35)', pointerEvents: 'none', zIndex: 2
       } };
     });
     vals.mapSpots = MSPOTS.map((s) => {
@@ -1310,6 +1318,14 @@ class Component extends DCLogic {
         tap: () => this.openProject(s.id)
       };
     });
+
+    // School-pin (aparte gele locatie-pin op het centrale ankerpunt)
+    vals.schoolPin = {
+      wrap: { position: 'absolute', left: sp0.x + 'px', top: sp0.y + 'px', transform: 'translate(-50%,-100%)', zIndex: 8, pointerEvents: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center' },
+      label: { background: '#ffe500', color: '#000', fontWeight: 700, textTransform: 'uppercase', fontSize: 9, letterSpacing: '.06em', padding: '3px 7px', marginBottom: 6, whiteSpace: 'nowrap', boxShadow: '0 0 12px rgba(255,229,0,.7)' },
+      pin: { width: 30, height: 30, background: '#ffe500', borderRadius: '50% 50% 50% 0', transform: 'rotate(-45deg)', border: '2px solid #000', boxShadow: '0 0 0 4px rgba(255,229,0,.22), 0 0 22px rgba(255,229,0,1)', display: 'flex', alignItems: 'center', justifyContent: 'center' },
+      dot: { width: 9, height: 9, borderRadius: '50%', background: '#000' }
+    };
 
     const mkTile = (id, open) => ({
       inner: st.flipped === id ? { transform: 'rotateY(180deg)' } : {},
